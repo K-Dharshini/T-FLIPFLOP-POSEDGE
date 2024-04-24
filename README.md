@@ -2,13 +2,13 @@
 
 **AIM:**
 
-To implement  T flipflop using verilog and validating their functionality using their functional tables
+To implement  T flipflop using verilog and validating their functionality using their functional tables.
 
 **SOFTWARE REQUIRED:**
 
 Quartus prime
 
-**THEORY**
+**THEORY:**
 
 **T Flip-Flop**
 
@@ -23,20 +23,52 @@ Here, Qtt & Qt+1t+1 are present state & next state respectively. So, T flip-flop
 
 ![image](https://github.com/naavaneetha/T-FLIPFLOP-POSEDGE/assets/154305477/cdd7fb32-539f-4b66-bb8d-f305a153c886)
 
- 
 From the above characteristic table, we can directly write the next state equation as Q(t+1)=T′Q(t)+TQ(t)′ ⇒Q(t+1)=T⊕Q(t)
 
-**Procedure**
+**PROCEDURE:**
 
-/* write all the steps invloved */
+Step 1: Open Quartus II in your laptop.
 
-**PROGRAM**
+Step 2: Write code to implement SR flipflop using verilog and validating their functionality using their functional tables.
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+Step 3: Run compilation to check for errors.
+
+Step 4: Open waveform output and load input values.
+
+Step 5: Run simulation to get the output.
+
+Step 6: Open in RTL viewers to get RTL diagram output.
+
+**PROGRAM:**
+
+~~~
+/* 
+Program for T flipflop posedge and verify its truth table in quartus using Verilog programming.
+Developed by: DHARSHINI K 
+RegisterNumber: 212223230047
 */
+module EXP9( input clk, rst_n, input t, output reg q, output q_bar);
+always@(posedge clk)
+begin 
+if(!rst_n)
+q<=0;
+else
+begin
+q<=(t?~q:q);
+end
+end
+assign q_bar = ~q;
+endmodule
+~~~
 
-**RTL LOGIC FOR FLIPFLOPS**
+**RTL LOGIC FOR FLIPFLOPS:**
 
-**TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/K-Dharshini/T-FLIPFLOP-POSEDGE/assets/139334830/1a3b6ada-163f-418b-820b-158cb4219368)
 
-**RESULTS**
+**TIMING DIGRAMS FOR FLIP FLOPS:**
+
+![image](https://github.com/K-Dharshini/T-FLIPFLOP-POSEDGE/assets/139334830/c350d41e-cb65-449b-8bd7-892dcd99e88d)
+
+**RESULTS:**
+
+Hence, T flipflop using verilog and validating their functionality using their functional tables is implemented.
